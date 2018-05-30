@@ -1,0 +1,27 @@
+//body
+header, nav, main, footer{
+    max-width: 60rem;
+    margin : auto;
+    width:100%;
+}
+
+//nav
+nav{
+    ul li{
+        display:block;
+        width:12%;
+        flex:none;
+        border-left: 1px solid rgba(0,0,0,0.3);
+    }
+    ul li:last-child{
+        border-right: 1px solid rgba(0,0,0,0.3);
+    }
+}
+
+// main
+main{
+    figure.photo{ width:25% - $gutterDbl; float:left;}
+    div.blog article{ width : 33.33% - $gutterDbl; float: left; }
+    div.blog article:nth-child(2n+1){clear:none;}
+    div.blog article:nth-child(3n+1){clear:left;}
+}

@@ -1,0 +1,123 @@
+/* prevent adjustments of font size after orientation is change in IE on windows phone and IOS. */
+html{
+    -webkit-text-size-adjust: 100%; 
+    -ms-text-size-adjust: 100%;
+}
+
+/* apply a natural box size model to all elements of the DOM. */
+*{
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+//body
+body{
+    font-family: $defaultFont;
+    font-weight: $normalWeight;
+    font-size: 16px;
+}
+// header
+header{
+    background-color: $primaryColor;
+    color: $secondaryColor;
+    padding: 1rem $gutter;
+
+    h1{
+        font-size: 2rem;
+        font-weight: $normalWeight;
+    }
+    h2{
+        font-size: 1.1rem;
+        font-weight: $normalWeight;
+    }
+}
+//nav
+nav{
+    background-color: $secondaryColor;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+
+    ul{
+        display: flex;
+        flex-direction: row;
+
+        li{
+            display:flex;
+            flex:1;
+            border-right: 1px solid rgba(0,0,0,0.3);
+        }
+        li a{
+            display:flex;
+            flex:1;
+            justify-content: center;
+            padding:0.4rem 0%;
+            transition: background 0.75s ease, color 0.75s ease;
+        }
+        li.active a{
+            background-color: darken($secondaryColor, 20%);
+        }
+        li a:hover{
+            color:$secondaryColor;
+            background-color: $primaryColor;
+        }
+        li:last-child{
+            border-right: none;
+        }
+    }
+}
+// main
+main{
+    h1, h2{
+        font-size: 2rem;
+        margin:0.5rem 0 0 $gutter;
+        color : $primaryColor;
+        font-weight: $boldWeight;
+    }
+
+    figure.banner{ width:100%; }
+    figure.banner img{ width:100%; }
+    hr.fadeAway{
+        height :2px;
+        border : none;
+        background: linear-gradient(to right, rgba(66,78,100,1) 0%,rgba(41,137,216,0) 100%);
+        margin : 0 $gutter; 
+    }
+    figure.photo{ width:100% - $gutterDbl; margin: .5rem $gutter;}
+    figure.photo img{ width:100%; }
+    figure.photo figcaption{ text-align: center; color:$primaryColor }
+
+    div.blog article{
+        width : 100% - $gutterDbl;
+        margin:0.5rem $gutter;
+        font-size: 1.1rem;
+    }
+
+    h3{
+        font-size: 1.2rem;
+        color : $fontColor;
+        font-weight: $boldWeight;
+    }
+    p{
+        line-height: 130%;
+    }
+}
+
+//footer
+footer{
+    display:flex;
+    background-color: $primaryColor;
+    justify-content: center;
+    color: $secondaryColor;
+    padding : 0.75rem 0rem;
+
+    p a{
+        color: $secondaryColor;
+    }
+}
+
+// clear fix
+.clearFix{
+    content:"";
+    clear : both;
+  }
+  
