@@ -3,24 +3,6 @@ import config from '../config/config'
 const {GOOGLE_CLIENT_ID, GAPI_URI ,OAUTH2_SCOPES} = config;
 
 class App extends Component {
-  async componentDidMount(){
-    try{
-      let authURL = "https://www.googleapis.com/auth/youtube";
-      let url= `${GAPI_URI}/search?access_token=${GOOGLE_CLIENT_ID}`;
-      let payload = { "kind": "youtube#searchResult",}
-
-      let result = await fetch({
-        method:"POST", 
-        url : authURL, 
-        // body:JSON.stringify(payload),
-        // Authorization: `Bearer ${"GOOGLE"}`
-      }).then(data=>data.json());
-      console.log(" result ", result);
-    }catch(err){
-      console.log(" any error in", err);
-    }
-  }
-
   render() {
     return (
       <div className="f1 fdc">
